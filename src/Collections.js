@@ -1,0 +1,159 @@
+/**
+ * Created by jeffreydorney on 8/17/16.
+ */
+
+console.log("*** JAVASCRIPT COLLECTION KATAS ***");
+
+// ********************
+// ARRAYS IN JAVASCRIPT
+// ********************
+
+console.log("\nFirst Last Six Kata\n**********************");
+
+// sets first three arrays for FirstLastSix
+var arrayOne = [1, 2, 6];
+var arrayTwo = [6, 1, 2, 3];
+var arrayThree = [13, 6, 1, 2, 3];
+
+// firstLastSix object
+function firstLast6(array){
+
+    // creates duplicate array for making changes
+    var newArray = array;
+
+    // sets a variable to an index if 6 is contained
+    var contains6 = newArray.indexOf(6);
+
+    /// checks to see if that index is the first or last
+    if(contains6 == 0 || contains6 == newArray.length-1) {
+        return true;
+    } else {
+
+        return false;
+    }
+}
+
+// firstLast6 output lines
+console.log("firstLast6([" + arrayOne + "]) -> " + firstLast6(arrayOne));
+console.log("firstLast6([" + arrayTwo + "]) -> " + firstLast6(arrayTwo));
+console.log("firstLast6([" + arrayThree + "]) -> " + firstLast6(arrayThree));
+console.log("");
+
+console.log("\nSame First Last Kata\n**********************");
+
+// sets arrays for sameFirstLast
+var sameFirstLastOne = [1,2,3];
+var sameFirstLastTwo = [1,2,3,1];
+var sameFirstLastThree = [1,2,1];
+
+// sameFirstLast object
+function sameFirstLast(array){
+    var newArray = array;
+
+    if(newArray[0] == newArray[newArray.length-1]) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+console.log("sameFirstLast([" + sameFirstLastOne + "]) -> " + sameFirstLast(sameFirstLastOne));
+console.log("sameFirstLast([" + sameFirstLastTwo + "]) -> " + sameFirstLast(sameFirstLastTwo));
+console.log("sameFirstLast([" + sameFirstLastThree + "]) -> " + sameFirstLast(sameFirstLastThree));
+console.log("");
+
+console.log("\nRotate Left 3 Kata\n**********************");
+
+// kata for rotateLeft3
+var rotateLeft3One = [1,2,3];
+var rotateLeft3Two = [5,11,9];
+var rotateLeft3Three = [7,0,0];
+
+function rotateLeft3(array){
+    var newArray = [array[1], array[2], array[0]];
+    return newArray;
+}
+
+console.log("rotateLeft3([" + rotateLeft3One + "]) -> " + rotateLeft3(rotateLeft3One));
+console.log("rotateLeft3([" + rotateLeft3Two + "]) -> " + rotateLeft3(rotateLeft3Two));
+console.log("rotateLeft3([" + rotateLeft3Three + "]) -> " + rotateLeft3(rotateLeft3Three));
+console.log("");
+
+console.log("\nReverse 3 Kata\n**********************");
+
+// kata for reverse3
+var reverse3One = [1,2,3];
+var reverse3Two = [5,11,9];
+var reverse3Three = [7,0,0];
+
+function reverseLeft3(array){
+    var newArray = [array[2], array[1], array[0]];
+    return newArray;
+}
+
+console.log("reverseLeft3([" + reverse3One + "]) -> " + reverseLeft3(reverse3One));
+console.log("reverseLeft3([" + reverse3Two + "]) -> " + reverseLeft3(reverse3Two));
+console.log("reverseLeft3([" + reverse3Three + "]) -> " + reverseLeft3(reverse3Three));
+console.log("");
+
+console.log("\nSum First Penultimate Kata\n**********************");
+
+// kata for sumFirstPenultimate
+var sumFirstPenultimateOne = [1,2,3];
+var sumFirstPenultimateTwo = [1,1];
+var sumFirstPenultimateThree = [1,1,1,1];
+var sumFirstPenultimateFour = [1,2,3,4,];
+
+function sumFirstPenultimate(array){
+
+    // checks to make sure its at least 2 items
+    if(array.length >= 2) {
+
+        // adds the first and second from last items
+        var sumOfNums = array[0] + array[array.length - 2];
+        return sumOfNums;
+
+        // checks the length to see if it's one
+    } else if(array.length == 1) {
+        return array[0];
+
+        // returns zero value if it's length zero
+    } else {
+        return 0;
+    }
+}
+
+
+console.log("sumFirstPenultimate([" + sumFirstPenultimateOne + "]) -> " + sumFirstPenultimate(sumFirstPenultimateOne));
+console.log("sumFirstPenultimate([" + sumFirstPenultimateTwo + "]) -> " + sumFirstPenultimate(sumFirstPenultimateTwo));
+console.log("sumFirstPenultimate([" + sumFirstPenultimateThree + "]) -> " + sumFirstPenultimate(sumFirstPenultimateThree));
+console.log("sumFirstPenultimate([" + sumFirstPenultimateFour + "]) -> " + sumFirstPenultimate(sumFirstPenultimateFour));
+console.log("");
+
+
+// *********************
+// OBJECTS IN JAVASCRIPT
+// *********************
+
+console.log("\nMap Bully Kata\n**********************");
+
+// map bully kata
+
+// declaring hashmap variables
+var mapBullyOne = ({"b": "dirt", "a": "candy"});
+var mapBullyTwo = ({"a": "candy"});
+var mapBullyThree = ({"b": "carrot", "c": "meh", "a": "candy"});
+
+// mapBully object
+function mapBully(map){
+
+}
+
+// template:
+// mapBully({"b": "dirt", "a": "candy"}) -> {"b": "candy", "a": ""}
+
+console.log("mapBully(", mapBullyOne, ") ->", mapBully(mapBullyOne));
+console.log("mapBully(", mapBullyTwo, ") ->", mapBully(mapBullyTwo));
+console.log("mapBully(", mapBullyThree, ") ->", mapBully(mapBullyThree));
+
+

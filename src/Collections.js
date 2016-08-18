@@ -146,14 +146,104 @@ var mapBullyThree = ({"b": "carrot", "c": "meh", "a": "candy"});
 
 // mapBully object
 function mapBully(map){
-
+    map["b"] = map["a"];
+    map["a"] = "";
+    return map;
 }
 
 // template:
 // mapBully({"b": "dirt", "a": "candy"}) -> {"b": "candy", "a": ""}
 
-console.log("mapBully(", mapBullyOne, ") ->", mapBully(mapBullyOne));
-console.log("mapBully(", mapBullyTwo, ") ->", mapBully(mapBullyTwo));
-console.log("mapBully(", mapBullyThree, ") ->", mapBully(mapBullyThree));
+console.log("mapBully({\"b\": \"dirt\", \"a\": \"candy\"}) ->", mapBully(mapBullyOne));
+console.log("mapBully({\"a\": \"candy\"}) ->", mapBully(mapBullyTwo));
+console.log("mapBully({\"b\": \"carrot\", \"c\": \"meh\", \"a\": \"candy\") ->", mapBully(mapBullyThree));
+
+console.log("\nMap Share Kata\n**********************");
+
+// map share kata
+
+// declaring hashmap variables
+var mapShareOne = ({"b": "bbb", "c": "ccc", "a": "aaa"});
+var mapShareTwo = ({"b": "xyz", "c": "ccc"});
+var mapShareThree = ({"d": "hi", "c": "meh", "a": "aaa"});
+
+// mapShare object
+function mapShare(map){
+    var newMap = map;
+    delete newMap["c"];
+
+    if(newMap["a"]) {
+        newMap["b"] = newMap["a"];
+    }
+    return newMap
+
+}
+
+console.log("mapShare({\"b\": \"bbb\", \"c\": \"ccc\", \"a\": \"aaa\"}) ->", mapShare(mapShareOne));
+console.log("mapShare({\"b\": \"xyz\", \"c\": \"ccc\"}) ->", mapShare(mapShareTwo));
+console.log("mapShare({\"d\": \"hi\", \"c\": \"meh\", \"a\": \"aaa\"}) ->", mapShare(mapShareThree));
+
+console.log("\nMap AB Kata\n**********************");
+
+// map AB kata
+var mapABOne = ({"b": "There", "a": "Hi"});
+var mapABTwo = ({"a": "Hi"});
+var mapABThree = ({"b": "There"});
+
+function mapAP(map) {
+    var newMap = map;
+
+    if(newMap["a"] && newMap["b"]) {
+        newMap["ab"] = (newMap["a"] + newMap["b"]);
+    }
+    return newMap
+}
+
+console.log("mapAP({\"b\": \"There\", \"a\": \"Hi\"}) ->", mapAP(mapABOne));
+console.log("mapAP({\"a\": \"Hi\"}) ->", mapAP(mapABTwo));
+console.log("mapAP({\"b\": \"There\"}) ->", mapAP(mapABThree));
+
+console.log("\nWord Length Kata\n**********************");
+
+// wordLength kata
+var wordLengthOne = (["a","bb","a","bb"]);
+var wordLengthTwo = (["this","and","that","and"]);
+var wordLengthThree = (["code","code","code","bug"]);
+
+function wordLen(array) {
+    var map;
+    var newObject;
+    var wordLengthCount;
+    var wordToCount;
+    var arrayLength = array.length;
+
+    for(var a = 0; a < arrayLength; a++){
+        wordToCount = (array.shift());
+        wordLengthCount = wordToCount.length;
+
+        if(!newObject.contains(wordToCount)){
+            newObject.add({wordToCount : wordLengthCount});
+        } else {
+            newObject.add({wordToCount : wordLengthCount + 1})
+        }
+        newObject = { wordToCount : wordLengthCount };
+
+        console.log(arrayLength + " - Array Length");
+        console.log(wordToCount + " - Word to Count");
+        console.log(array + " - Array");
+        console.log(wordLengthCount + " - Word Length Count");
+        console.log(newObject);
 
 
+        // if(!map.includes(nextWord)){
+        //    map.push({nextWord: nextWord.length})
+        // }
+    }
+
+
+
+
+    return map;
+}
+
+console.log("wordLength([\"a\",\"bb\",\"a\",\"bb\"}) ->", wordLen(wordLengthOne));

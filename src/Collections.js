@@ -123,13 +123,11 @@ function sumFirstPenultimate(array){
     }
 }
 
-
 console.log("sumFirstPenultimate([" + sumFirstPenultimateOne + "]) -> " + sumFirstPenultimate(sumFirstPenultimateOne));
 console.log("sumFirstPenultimate([" + sumFirstPenultimateTwo + "]) -> " + sumFirstPenultimate(sumFirstPenultimateTwo));
 console.log("sumFirstPenultimate([" + sumFirstPenultimateThree + "]) -> " + sumFirstPenultimate(sumFirstPenultimateThree));
 console.log("sumFirstPenultimate([" + sumFirstPenultimateFour + "]) -> " + sumFirstPenultimate(sumFirstPenultimateFour));
 console.log("");
-
 
 // *********************
 // OBJECTS IN JAVASCRIPT
@@ -176,7 +174,6 @@ function mapShare(map){
         newMap["b"] = newMap["a"];
     }
     return newMap
-
 }
 
 console.log("mapShare({\"b\": \"bbb\", \"c\": \"ccc\", \"a\": \"aaa\"}) ->", mapShare(mapShareOne));
@@ -186,9 +183,9 @@ console.log("mapShare({\"d\": \"hi\", \"c\": \"meh\", \"a\": \"aaa\"}) ->", mapS
 console.log("\nMap AB Kata\n**********************");
 
 // map AB kata
-var mapABOne = ({"b": "There", "a": "Hi"});
-var mapABTwo = ({"a": "Hi"});
-var mapABThree = ({"b": "There"});
+var mapABOne = {"b": "There", "a": "Hi"};
+var mapABTwo = {"a": "Hi"};
+var mapABThree = {"b": "There"};
 
 function mapAP(map) {
     var newMap = map;
@@ -210,6 +207,7 @@ var wordLengthOne = (["a","bb","a","bb"]);
 var wordLengthTwo = (["this","and","that","and"]);
 var wordLengthThree = (["code","code","code","bug"]);
 
+/*
 function wordLen(array) {
     var map;
     var newObject;
@@ -233,17 +231,36 @@ function wordLen(array) {
         console.log(array + " - Array");
         console.log(wordLengthCount + " - Word Length Count");
         console.log(newObject);
-
-
         // if(!map.includes(nextWord)){
         //    map.push({nextWord: nextWord.length})
         // }
     }
-
-
-
-
     return map;
 }
 
 console.log("wordLength([\"a\",\"bb\",\"a\",\"bb\"}) ->", wordLen(wordLengthOne));
+*/
+
+
+var test1 = (["a", "bb", "ccc", "d"]);
+var test2 = (["bbb", "c", "dd", "aaaaa"]);
+var test3 = {
+    "a" : "hi",
+    "b" : "there",
+    "c" : "buddy"
+}
+
+function testFunction(array) {
+
+    for(newObject : array){
+        wordToCount = 
+    }
+    var newObject = array;
+    var wordToCount = newObject.pop();
+    var wordLenth = wordToCount.length;
+    return newObject + " " + wordLenth;
+
+}
+
+console.log(testFunction(test1));
+console.log(testFunction(test2));

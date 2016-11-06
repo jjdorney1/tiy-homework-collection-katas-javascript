@@ -207,60 +207,49 @@ var wordLengthOne = (["a","bb","a","bb"]);
 var wordLengthTwo = (["this","and","that","and"]);
 var wordLengthThree = (["code","code","code","bug"]);
 
-/*
+
 function wordLen(array) {
-    var map;
-    var newObject;
-    var wordLengthCount;
-    var wordToCount;
-    var arrayLength = array.length;
+    var map= new Map();
 
-    for(var a = 0; a < arrayLength; a++){
-        wordToCount = (array.shift());
-        wordLengthCount = wordToCount.length;
 
-        if(!newObject.contains(wordToCount)){
-            newObject.add({wordToCount : wordLengthCount});
-        } else {
-            newObject.add({wordToCount : wordLengthCount + 1})
+    array.forEach(function (element) {
+        map.set(element, element.length);
+
+    });
+    return map;
+
+}
+
+console.log("wordLength(" + wordLengthOne + ") ->", wordLen(wordLengthOne));
+console.log("wordLength(" + wordLengthTwo +  ") ->", wordLen(wordLengthTwo));
+console.log("wordLength(" + wordLengthThree + ") ->", wordLen(wordLengthThree));
+
+console.log("\nIndex Words Kata\n**********************");
+
+var indexWordsOne = (["aardvark", "apple", "zamboni", "phone"]);
+var indexWordsTwo = (["elephant"]);
+var indexWordsThree = ([]);
+var indexWordsFour = ([""]);
+
+function indexWord(index){
+
+    var map = new Map();
+
+    index.forEach(function (element) {
+        var firstLetter = element.charAt(0);
+        if (element.size != 0 && element != ""){
+            if (map.hasOwnProperty(firstLetter)){
+                map.add(firstLetter, element)
+            } else {
+                map.set(firstLetter, element)
+            }
         }
-        newObject = { wordToCount : wordLengthCount };
+    });
 
-        console.log(arrayLength + " - Array Length");
-        console.log(wordToCount + " - Word to Count");
-        console.log(array + " - Array");
-        console.log(wordLengthCount + " - Word Length Count");
-        console.log(newObject);
-        // if(!map.includes(nextWord)){
-        //    map.push({nextWord: nextWord.length})
-        // }
-    }
     return map;
 }
 
-console.log("wordLength([\"a\",\"bb\",\"a\",\"bb\"}) ->", wordLen(wordLengthOne));
-*/
-
-
-var test1 = (["a", "bb", "ccc", "d"]);
-var test2 = (["bbb", "c", "dd", "aaaaa"]);
-var test3 = {
-    "a" : "hi",
-    "b" : "there",
-    "c" : "buddy"
-}
-
-function testFunction(array) {
-
-    for(newObject : array){
-        wordToCount = 
-    }
-    var newObject = array;
-    var wordToCount = newObject.pop();
-    var wordLenth = wordToCount.length;
-    return newObject + " " + wordLenth;
-
-}
-
-console.log(testFunction(test1));
-console.log(testFunction(test2));
+console.log("indexWords(" + indexWordsOne + ") ->", indexWord(indexWordsOne));
+console.log("indexWords(" + indexWordsTwo + ") ->", indexWord(indexWordsTwo));
+console.log("indexWords([]) ->", indexWord(indexWordsThree));
+console.log("indexWords([\"\"]) ->", indexWord(indexWordsFour));
